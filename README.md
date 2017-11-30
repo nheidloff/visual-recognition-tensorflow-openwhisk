@@ -2,7 +2,7 @@
 
 This [project](https://github.com/nheidloff/visual-recognition-tensorflow-openwhisk) contains a sample application which uses an extended [MobileNet](https://research.googleblog.com/2017/06/mobilenets-open-source-models-for.html) TensorFlow model to recognize different flower types. The predictions are executed by [TensorFlow](https://www.tensorflow.org/) running in an [OpenWhisk](https://www.ibm.com/cloud/functions) function.
 
-This project is an extension of the TensorFlow tutorial ["TensorFlow for Poets"](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) which describes how to [retrain](https://www.tensorflow.org/tutorials/image_retraining) MobileNet's final layer of a neural network for new categories.
+This project is an extension of the TensorFlow tutorial [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) which describes how to [retrain](https://www.tensorflow.org/tutorials/image_retraining) MobileNet's final layer of a neural network for new categories.
 
 This screenshot shows the sample web application:
 
@@ -24,11 +24,19 @@ This screenshot shows the sample web application:
 
 This project only contains the web application and an OpenWhisk function which provides the classify REST API. The project [VisualRecognitionWithTensorflow](https://github.com/AnsgarSchmidt/VisualRecognitionWithTensorflow) contains the code to train the model as well as the code for a Docker image to classify flowers. You also need an instance of IBM Object Storage to store the images and the models. Check out the blog entries above.
 
-Additionally You need an IBM Cloud account and two CLIs:
+Additionally you need an IBM Cloud account and two CLIs:
 
 * [IBM Cloud account][sign_up]
 * [Cloud Foundry CLI][cloud_foundry]
 * [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/download_cli.html)
+
+Clone the two projects:
+
+```sh
+$ git clone https://github.com/nheidloff/visual-recognition-tensorflow-openwhisk.git
+$ git clone https://github.com/AnsgarSchmidt/VisualRecognitionWithTensorflow.git
+$ cd visual-recognition-tensorflow-openwhisk
+```
 
 
 ## Setup OpenWhisk Functions
@@ -36,34 +44,35 @@ Additionally You need an IBM Cloud account and two CLIs:
 In order to deploy the two OpenWhisk functions and one sequence run the following commands from the 'openwhisk-api' directory:
 
 ```sh
+$ cd openwhisk-api
 $ bx login -a api.ng.bluemix.net
-$ bx target -o niklas_heidloff@de.ibm.com -s dev
+$ bx target -o <your-organization> -s <your-space>
 $ bx plugin install Cloud-Functions -r Bluemix
 $ wsk package update visualRecognition
-$ wsk action create visualRecognition/tensorflow-classify --docker ansi/tensorflow-openwhisk-classify:latest
+$ wsk action create visualRecognition/tensorflow-classify --docker <your-dockerhub-name>/tensorflow-openwhisk-classify:latest
 $ npm install
 $ sh ./deploy
 ```
 
 ## Setup Web Application
 
-In the [OpenWhisk web application](https://console.bluemix.net/openwhisk/manage/actions) choose your sequence and open 'Additional Details'. From there copy the URL into the clipboard. Create a new file '.env' in the 'web-app' directory. See [.env-template](https://github.com/nheidloff/visual-recognition-tensorflow-openwhisk/blob/master/web-app/.env-template) for an example. Paste the URL in this file.
+In the [OpenWhisk web application](https://console.bluemix.net/openwhisk/manage/actions) choose your sequence and open 'Additional Details'. From there copy the URL into the clipboard. Create a new file '.env' in the 'web-app' directory. See [.env-template](.env-template) for an example. Paste the URL in this file.
 
 From the directory 'web-app' run these commands:
 
 ```sh
-$ git clone https://github.com/nheidloff/visual-recognition-tensorflow-openwhisk.git
+$ cd web-app
 $ npm install
 $ npm start
 ```
   
 Open the web application via [http://localhost:3000/](http://localhost:3000/).
 
-Optionally: In order to deploy the application to the IBM Cloud change the application name in 'manifest.yml' to something unique and run these commands:
+Optionally: In order to deploy the application to the IBM Cloud change the application name in [manifest.yml](manifest.yml) to something unique and run these commands:
 
 ```sh
 $ bx login -a api.ng.bluemix.net
-$ bx target -o niklas_heidloff@de.ibm.com -s dev
+$ bx target -o <your-organization> -s <your-space>
 $ cf push
 ```
 
