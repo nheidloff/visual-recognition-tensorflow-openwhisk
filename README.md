@@ -6,7 +6,7 @@ This project is an extension of the TensorFlow tutorial ["TensorFlow for Poets"]
 
 This screenshot shows the sample web application:
 
-![alt text](https://github.ibm.com/niklas-heidloff/visual-recognition-tensorflow/raw/master/screenshots/web-app.png "Visual Recognition with TensorFlow and OpenWhisk")
+![alt text](https://github.com/nheidloffvisual-recognition-tensorflow-openwhisk/raw/master/screenshots/web-app.png "Visual Recognition with TensorFlow and OpenWhisk")
 
 
 ## Documentation
