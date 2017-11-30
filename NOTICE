@@ -1,0 +1,12 @@
+This product includes software originally developed by IBM Corporation
+Copyright 2017 IBM Corp.
+
+The project contains a subset of the code from https://github.com/watson-developer-cloud/visual-recognition-nodejs 
+which has been developed by IBMers.
+
+The project contains a subset of the code from https://github.com/cfjedimaster/Serverless-Examples/tree/master/file_upload
+which has been developed by an IBMer.
+
+See the package.json files in 'openwhisk-api' and 'web-app' for used npm modules.
+
+See LICENSE_IMAGES.txt for the licenses of the seven sample images.
