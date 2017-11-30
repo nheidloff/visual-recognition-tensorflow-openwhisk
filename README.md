@@ -6,7 +6,7 @@ This project is an extension of the TensorFlow tutorial ["TensorFlow for Poets"]
 
 This screenshot shows the sample web application:
 
-![alt text](https://github.com/nheidloffvisual-recognition-tensorflow-openwhisk/raw/master/screenshots/web-app.png "Visual Recognition with TensorFlow and OpenWhisk")
+![alt text](https://github.com/nheidloff/visual-recognition-tensorflow-openwhisk/raw/master/screenshots/web-app.png "Visual Recognition with TensorFlow and OpenWhisk")
 
 
 ## Documentation
@@ -17,7 +17,7 @@ This screenshot shows the sample web application:
 * [Accessing IBM Object Store from Python](https://ansi.23-5.eu/2017/11/accessing-ibm-object-store-python/)
 * [Image Recognition with Tensorflow training on Kubernetes](https://ansi.23-5.eu/2017/11/image-recognition-with-tensorflow-training-on-kubernetes/)
 * [Image Classification with Tensorflow and OpenWhisk](https://ansi.23-5.eu)
-* [Open Source Sample how to use TensorFlow in OpenWhisk](https://heidloff.net/article/visual-recognition-tensorflow)
+* [Sample Application to classify Images with TensorFlow and OpenWhisk](https://heidloff.net/article/visual-recognition-tensorflow)
 
 
 ## Prerequisites
