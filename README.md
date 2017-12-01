@@ -4,7 +4,7 @@ This [project](https://github.com/nheidloff/visual-recognition-tensorflow-openwh
 
 This project is an extension of the TensorFlow tutorial [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) which describes how to [retrain](https://www.tensorflow.org/tutorials/image_retraining) MobileNet's final layer of a neural network for new categories.
 
-This screenshot shows the sample web application:
+The screenshot shows the sample web application:
 
 ![alt text](https://github.com/nheidloff/visual-recognition-tensorflow-openwhisk/raw/master/screenshots/web-app.png "Visual Recognition with TensorFlow and OpenWhisk")
 
@@ -13,11 +13,11 @@ This screenshot shows the sample web application:
 
 [Ansgar Schmidt](https://ansi.23-5.eu/) and I have blogged about this project:
 
-* [Visual Recognition with TensorFlow and OpenWhisk](http://heidloff.net/article/visual-recognition-tensorflow-openwhisk)
+* [Sample Application to classify Images with TensorFlow and OpenWhisk](https://heidloff.net/article/visual-recognition-tensorflow)
 * [Accessing IBM Object Store from Python](https://ansi.23-5.eu/2017/11/accessing-ibm-object-store-python/)
 * [Image Recognition with Tensorflow training on Kubernetes](https://ansi.23-5.eu/2017/11/image-recognition-with-tensorflow-training-on-kubernetes/)
-* [Image Classification with Tensorflow and OpenWhisk](https://ansi.23-5.eu)
-* [Sample Application to classify Images with TensorFlow and OpenWhisk](https://heidloff.net/article/visual-recognition-tensorflow)
+* [Image Recognition with Tensorflow classification on OpenWhisk](https://ansi.23-5.eu/2017/11/image-recognition-tensorflow-classification-openwhisk/)
+* [Visual Recognition with TensorFlow and OpenWhisk](http://heidloff.net/article/visual-recognition-tensorflow-openwhisk)
 
 
 ## Prerequisites
@@ -52,6 +52,7 @@ $ wsk package update visualRecognition
 $ wsk action create visualRecognition/tensorflow-classify --docker <your-dockerhub-name>/tensorflow-openwhisk-classify:latest
 $ npm install
 $ sh ./deploy
+$ wsk action create --sequence visualRecognition/classifyAPI visualRecognition/classifyImage,visualRecognition/tensorflow-classify --web raw
 ```
 
 ## Setup Web Application
