@@ -38,7 +38,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [Serverless](https://www.ibm.com/cloud-computing/bluemix/openwhisk): An event-action platform that allows you to execute code in response to an event.
 
 # Watch the Video
-[![](http://img.youtube.com/vi/tgnXthkbT9o/0.jpg)](https://www.youtube.com/watch?v=tgnXthkbT9o)
+[![](http://img.youtube.com/vi/Jxi7U7VOMYg/0.jpg)](https://github.com/nheidloff/visual-recognition-tensorflow-openwhisk/raw/master/screenshots/web-app.png)
 
 The screenshot shows the sample web application:
 
@@ -117,12 +117,11 @@ $ cf push
 
 Open the web application via [http://your-application-name.mybluemix.net/](http://your-application-name.mybluemix.net/).
 
-# Links
 
-* [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0): How to run TensorFlow on a single machine, and train a simple classifier to classify images of flowers.
-* [IBM adds support for Google’s Tensorflow to its PowerAI machine learning framework](https://techcrunch.com/2017/01/26/ibm-adds-support-for-googles-tensorflow-to-its-powerai-deep-learning-framework/): TechCrunch blog post
-* [Getting started with TensorFlow](https://www.ibm.com/developerworks/library/cc-get-started-tensorflow/): This tutorial provides an overview of the TensorFlow system, including the framework's benefits, supported platforms, installation considerations, and supported languages and bindings.
-* [Serving deep learning models in a serverless platform](https://arxiv.org/pdf/1710.08460.pdf):  A scientific paper that evaluates  the  suitability  of  a  serverless  computing  environment for the inferencing  of large neural network models.
+## License
+
+This sample code is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).
+
 
 ## Open Source @ IBM
   Find more open source projects on the [IBM Github Page](http://ibm.github.io/).
@@ -140,5 +139,4 @@ Open the web application via [http://your-application-name.mybluemix.net/](http:
 * [Image Recognition with Tensorflow classification on OpenWhisk](https://ansi.23-5.eu/2017/11/image-recognition-tensorflow-classification-openwhisk/)
 * [Visual Recognition with TensorFlow and OpenWhisk](http://heidloff.net/article/visual-recognition-tensorflow-openwhisk)
 
-# License
-[Apache 2.0](LICENSE)
+
